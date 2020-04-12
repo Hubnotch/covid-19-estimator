@@ -3,7 +3,7 @@ const covid19ImpactEstimator = (data) => {
     const currentlyInfected = data.reportedCases * 10;
     const svrcurrentlyInfected = data.reportedCases * 50;
     const totalBed = data.totalHospitalBeds;
-    cosnt avgIncome = data.region.avgDailyIncomeInUSD;
+    const avgIncome = data.region.avgDailyIncomeInUSD;
     const avgIncPop = data.region.avgDailyIncomePopulation;
 
     let Numdays = data.timeToElapse;
