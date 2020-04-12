@@ -3,7 +3,7 @@ const covid19ImpactEstimator = (data) => {
     const currentlyInfected = data.reportedCases * 10;
     const svrcurrentlyInfected = data.reportedCases * 50;
     const totalBed = data.totalHospitalBeds;
-    const avgIncome = data.region.avgDailyIncomeInUSD;
+    const avgDailyIncome = data.region.avgDailyIncomeInUSD;
     const avgIncPop = data.region.avgDailyIncomePopulation;
 
     let Numdays = data.timeToElapse;
@@ -39,11 +39,9 @@ const covid19ImpactEstimator = (data) => {
 
     const svrCasesForVentilatorsByRequestedTime = Math.floor(0.02 * svrInfectionsByRequestedTime);
 
-    dollarsInFlight = infectionsByRequestedTime * avgIncPop * avgIncome * numdays;
-
     dollarsInFlight = parseFloat(dollarsInFlight.toFixed(2));
 
-    svrDollarsInFlight = svrInfectionsByRequestedTime * avgIncPop * avgIncome * numDays;
+    svrDollarsInFlight = svrInfectionsByRequestedTime * avgIncPop * avgDailyIncome * numDays;
     
     svrDollarsInFlight = parseFloat(svrDollarsInFlight.toFixed(2));
 
